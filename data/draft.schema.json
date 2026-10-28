@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "scenarios", "questions"],
+  "properties": {
+    "status": {"enum": ["ready", "needs_clarification"]},
+    "scenarios": {
+      "type": "array", "maxItems": 12,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["criterion_id", "type", "title", "steps", "expected_result", "evidence_quote"],
+        "properties": {
+          "criterion_id": {"type": "string", "minLength": 1},
+          "type": {"enum": ["positive", "negative", "boundary"]},
+          "title": {"type": "string", "minLength": 1},
+          "steps": {"type": "array", "minItems": 1, "maxItems": 6, "items": {"type": "string", "minLength": 1}},
+          "expected_result": {"type": "string", "minLength": 1},
+          "evidence_quote": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "questions": {"type": "array", "maxItems": 8, "items": {"type": "string", "minLength": 1}}
+  }
+}

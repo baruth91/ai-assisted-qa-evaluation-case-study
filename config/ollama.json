@@ -1,0 +1,5 @@
+{
+  "model": "llama3.1:latest",
+  "expected_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+  "options": {"temperature": 0, "seed": 42, "num_ctx": 4096, "num_predict": 1536}
+}
