@@ -8,8 +8,15 @@ checker tests, recorded response evaluation and real model execution.
 | --- | --- |
 | Local Python checker, adapter and replay tests | 25 passed in 2.17 seconds; Ruff and dependency checks passed |
 | Local real model generation | Six completed real responses; two passed all bounded automated checks |
-| Hosted checker tests and recorded replay | Pending publication and execution |
+| Hosted checker tests and recorded replay | 25 passed in 0.82 seconds; report-only replay retained the 2/6 sample result |
 | Independent human acceptance | Not performed; owner review remains a learning task |
+
+Verified hosted run: [40766754597](https://github.com/baruth91/ai-assisted-qa-evaluation-case-study/actions/runs/40766754597),
+source commit 7c5a51e. Ruff and dependency checks passed, and JUnit/replay artifacts
+were uploaded. The complete job took about 22 seconds. This hosted run made no
+model call; real inference was performed locally and the captured responses were
+re-evaluated in CI. The optional model candidate gate was not enabled; CLI tests
+verified that it returns 1 for the recorded candidate failures.
 
 ## Observed local model results
 
